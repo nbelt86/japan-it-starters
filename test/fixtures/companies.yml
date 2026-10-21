@@ -1,0 +1,27 @@
+one:
+  name: GaijinTech Solutions
+  description: A Tokyo IT consultancy with a junior training program.
+  city: Tokyo
+  industry: IT Consulting
+  tech_stack: Java, Spring, AWS
+  careers_url: https://example.com/careers
+  source: Wantedly
+  japanese_level: basic
+  visa_sponsorship: true
+  english_ok: true
+  hires_juniors: true
+  remote_policy: hybrid
+
+two:
+  name: Osaka Rails Shop
+  description: A small Osaka Rails shop that hires bootcamp grads.
+  city: Osaka
+  industry: Web Development
+  tech_stack: Ruby on Rails, Vue.js
+  careers_url: https://example.com/careers
+  source: Indeed Japan
+  japanese_level: business
+  visa_sponsorship: false
+  english_ok: false
+  hires_juniors: true
+  remote_policy: onsite
