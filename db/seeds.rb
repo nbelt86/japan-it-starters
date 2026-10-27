@@ -45,6 +45,51 @@
            "roles specifically — most sourcing pointed to Engineer (Go/React) openings without a " \
            "stated seniority floor. hires_juniors left false until verified; check " \
            "hello.smarthr.co.jp/en/recruit directly before relying on this one. Verified Oct 2026."
+  },
+  {
+    name: "Rakuten",
+    description: "Japan's largest internet services conglomerate (e-commerce, fintech, mobile " \
+                 "carrier, and more). Runs an explicit New Graduate Recruiting track for engineers " \
+                 "plus a long-term internship (\"Rakuten TECH Camp\"), and English is the official " \
+                 "internal company language.",
+    city: "Tokyo", industry: "E-commerce / Internet Conglomerate", tech_stack: "Java, Kotlin, Spring Boot, Kubernetes, Kafka",
+    careers_url: "https://global.rakuten.com/corp/careers/graduates/recruit_engineer/index.html",
+    source: "global.rakuten.com, GaijinPot Jobs, japan-dev.com",
+    japanese_level: :not_required, visa_sponsorship: true, english_ok: true,
+    hires_juniors: true, remote_policy: :hybrid,
+    notes: "Strongest hires_juniors evidence of the batch: dedicated New Graduate Recruiting site " \
+           "plus an active long-term internship program (Rakuten TECH Camp). Found a GaijinPot " \
+           "posting explicitly offering \"100% Visa Sponsorship, No Japanese required.\" " \
+           "17,000+ employees from 70+ countries. Verified Oct 2026."
+  },
+  {
+    name: "Ubie",
+    description: "Med-tech startup (AI-assisted medical interviewing) founded by a doctor and an " \
+                 "engineer. Remote-first team, deliberately designed so no work requires Japanese.",
+    city: "Tokyo", industry: "HealthTech", tech_stack: "Ruby, TypeScript, Kotlin, Java, Kubernetes, GCP",
+    careers_url: "https://recruit.ubiehealth.com/", source: "recruit.ubiehealth.com, japan-dev.com",
+    japanese_level: :not_required, visa_sponsorship: true, english_ok: true,
+    hires_juniors: false, remote_policy: :remote,
+    notes: "Visa sponsorship and \"no Japanese needed\" are both clearly confirmed (native-speaker " \
+           "teammates translate where needed). Could NOT confirm they hire true entry-level/no-" \
+           "experience engineers — postings found were general scale-up engineering roles, not " \
+           "explicitly junior. hires_juniors left false until verified directly. Verified Oct 2026."
+  },
+  {
+    name: "Cybozu",
+    description: "Groupware/collaboration SaaS company (Kintone, cybozu.com). Has an English-" \
+                 "speaking New Business Division building identity/access management and " \
+                 "communication tools, recruiting internationally since 2022.",
+    city: "Tokyo", industry: "Groupware / Collaboration SaaS", tech_stack: "Go, JavaScript",
+    careers_url: "https://cybozu.co.jp/en/company/careers/globalrecruitment/",
+    source: "cybozu.co.jp, japan-dev.com, tokyodev.com",
+    japanese_level: :basic, visa_sponsorship: true, english_ok: true,
+    hires_juniors: false, remote_policy: :hybrid,
+    notes: "Visa sponsorship confirmed, with relocation support. Japanese requirement genuinely " \
+           "varies by team — some roles need none, others want conversational Japanese; marked " \
+           ":basic as a middle estimate, verify per-posting. Every open role found on japan-dev.com " \
+           "was titled \"Senior\" (Frontend/Backend/Product Designer) — no junior-level evidence, " \
+           "so hires_juniors left false. Verified Oct 2026."
   }
 ].each do |attrs|
   company = Company.find_or_initialize_by(name: attrs[:name])
