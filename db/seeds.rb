@@ -97,6 +97,42 @@
            "was titled \"Senior\" (Frontend/Backend/Product Designer) — no junior-level evidence, " \
            "so hires_juniors left false. Verified Oct 2026.",
     last_verified_on: Date.new(2026, 10, 27)
+  },
+  {
+    name: "Nulab",
+    description: "Maker of Backlog, Cacoo, and Nulab Pass — collaboration/project-management " \
+                 "SaaS used internationally. Genuinely headquartered in Fukuoka (not a branch " \
+                 "office), with a company-run Japanese Language Learning program specifically " \
+                 "for its foreign employees.",
+    city: "Fukuoka", industry: "SaaS / Collaboration Tools", tech_stack: "Java, Go, GraphQL, Protobuf",
+    careers_url: "https://careers.nulab.com/engineer/",
+    source: "careers.nulab.com, Glassdoor, Nulab company blog",
+    japanese_level: :basic, visa_sponsorship: true, english_ok: true,
+    hires_juniors: false, remote_policy: :hybrid,
+    notes: "Fukuoka's city-run Engineer Visa scheme shortens visa processing to ~1 month " \
+           "(vs. 1-3 months) for this exact role type, and Nulab runs an internal Japanese " \
+           "Learning System for foreign staff — both strong circumstantial evidence they " \
+           "support foreign hires, but I did NOT find an explicit \"we sponsor visas\" company " \
+           "statement, nor confirmation of entry-level hiring specifically. 214 employees " \
+           "worldwide as of Mar 2026. Verified Oct 2026.",
+    last_verified_on: Date.new(2026, 10, 27)
+  },
+  {
+    name: "Capcom",
+    description: "Major Osaka-headquartered video game company (Street Fighter, Resident Evil, " \
+                 "Monster Hunter). Its \"Global Development\" team works primarily in English.",
+    city: "Osaka", industry: "Video Games", tech_stack: "C++ (proprietary game/engine development)",
+    careers_url: "https://www.capcom.co.jp/recruit/english/",
+    source: "capcom.co.jp/recruit/english/, nucamp.co",
+    japanese_level: :basic, visa_sponsorship: true, english_ok: true,
+    hires_juniors: false, remote_policy: :onsite,
+    notes: "The Global Development team explicitly uses English as its primary working " \
+           "language and the company is continuously hiring graphics/network/AI engineering " \
+           "roles — but I found a prominent \"Mid-Career\" recruitment page and no explicit " \
+           "entry-level/no-experience track, so hires_juniors is left false pending direct " \
+           "verification. tech_stack is a reasonable inference from role types (graphics/" \
+           "engine programming), not independently confirmed. Verified Oct 2026.",
+    last_verified_on: Date.new(2026, 10, 27)
   }
 ].each do |attrs|
   company = Company.find_or_initialize_by(name: attrs[:name])
