@@ -3,7 +3,8 @@
 # the same shape and re-running `rails db:seed` (idempotent via find_or_initialize_by).
 #
 # Fields: see Company model — japanese_level: :not_required/:basic/:business/:fluent,
-# remote_policy: :onsite/:hybrid/:remote
+# remote_policy: :onsite/:hybrid/:remote, last_verified_on: date this entry was last
+# cross-checked against real sources — update it whenever you re-verify a company.
 
 [
   {
@@ -17,7 +18,8 @@
     hires_juniors: true, remote_policy: :hybrid,
     notes: "Full visa sponsorship + relocation support confirmed. Many dev roles list Japanese " \
            "as \"Not Required\"; the Japanese/English mix varies by team. Also has a Fukuoka " \
-           "engineering hub. Verified Oct 2026 via careers.mercari.com and japan-dev.com."
+           "engineering hub. Verified Oct 2026 via careers.mercari.com and japan-dev.com.",
+    last_verified_on: Date.new(2026, 10, 23)
   },
   {
     name: "Money Forward",
@@ -30,7 +32,8 @@
     hires_juniors: true, remote_policy: :hybrid,
     notes: "52% of the Tokyo engineering team is non-Japanese (100+ employees from 30+ countries). " \
            "If a job posting doesn't explicitly list a Japanese requirement, there isn't one. " \
-           "Also has a Fukuoka office. Verified Oct 2026 via japan-dev.com and recruit.moneyforward.com."
+           "Also has a Fukuoka office. Verified Oct 2026 via japan-dev.com and recruit.moneyforward.com.",
+    last_verified_on: Date.new(2026, 10, 23)
   },
   {
     name: "SmartHR",
@@ -44,7 +47,8 @@
            "but I could NOT independently confirm they hire into true entry-level/no-experience " \
            "roles specifically — most sourcing pointed to Engineer (Go/React) openings without a " \
            "stated seniority floor. hires_juniors left false until verified; check " \
-           "hello.smarthr.co.jp/en/recruit directly before relying on this one. Verified Oct 2026."
+           "hello.smarthr.co.jp/en/recruit directly before relying on this one. Verified Oct 2026.",
+    last_verified_on: Date.new(2026, 10, 23)
   },
   {
     name: "Rakuten",
@@ -60,7 +64,8 @@
     notes: "Strongest hires_juniors evidence of the batch: dedicated New Graduate Recruiting site " \
            "plus an active long-term internship program (Rakuten TECH Camp). Found a GaijinPot " \
            "posting explicitly offering \"100% Visa Sponsorship, No Japanese required.\" " \
-           "17,000+ employees from 70+ countries. Verified Oct 2026."
+           "17,000+ employees from 70+ countries. Verified Oct 2026.",
+    last_verified_on: Date.new(2026, 10, 27)
   },
   {
     name: "Ubie",
@@ -73,7 +78,8 @@
     notes: "Visa sponsorship and \"no Japanese needed\" are both clearly confirmed (native-speaker " \
            "teammates translate where needed). Could NOT confirm they hire true entry-level/no-" \
            "experience engineers — postings found were general scale-up engineering roles, not " \
-           "explicitly junior. hires_juniors left false until verified directly. Verified Oct 2026."
+           "explicitly junior. hires_juniors left false until verified directly. Verified Oct 2026.",
+    last_verified_on: Date.new(2026, 10, 27)
   },
   {
     name: "Cybozu",
@@ -89,7 +95,8 @@
            "varies by team — some roles need none, others want conversational Japanese; marked " \
            ":basic as a middle estimate, verify per-posting. Every open role found on japan-dev.com " \
            "was titled \"Senior\" (Frontend/Backend/Product Designer) — no junior-level evidence, " \
-           "so hires_juniors left false. Verified Oct 2026."
+           "so hires_juniors left false. Verified Oct 2026.",
+    last_verified_on: Date.new(2026, 10, 27)
   }
 ].each do |attrs|
   company = Company.find_or_initialize_by(name: attrs[:name])

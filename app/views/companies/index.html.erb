@@ -57,6 +57,9 @@
               <% end %>
             </div>
             <p class="text-gray-400 text-sm line-clamp-2"><%= company.description %></p>
+            <% if company.last_verified_on.present? %>
+              <p class="text-gray-600 text-xs">Verified <%= company.last_verified_on.strftime("%b %Y") %></p>
+            <% end %>
           </div>
         <% end %>
       <% end %>

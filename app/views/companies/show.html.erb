@@ -50,5 +50,9 @@
         <span class="text-gray-500">Source: <%= @company.source %></span>
       <% end %>
     </div>
+
+    <% if @company.last_verified_on.present? %>
+      <p class="text-gray-600 text-xs">Last verified <%= @company.last_verified_on.strftime("%B %-d, %Y") %></p>
+    <% end %>
   </div>
 </div>

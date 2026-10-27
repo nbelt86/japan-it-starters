@@ -25,6 +25,12 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_match @company.description, response.body
   end
 
+  test "show displays the last verified date" do
+    get company_path(@company)
+    assert_response :success
+    assert_match "Last verified October 23, 2026", response.body
+  end
+
   test "index filters by text query across name, industry, tech_stack" do
     get companies_path, params: { query: "rails" }
     assert_response :success

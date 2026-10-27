@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_10_21_083138) do
+ActiveRecord::Schema[7.1].define(version: 2026_10_27_073011) do
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_10_21_083138) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "last_verified_on"
     t.index ["hires_juniors"], name: "index_companies_on_hires_juniors"
     t.index ["visa_sponsorship"], name: "index_companies_on_visa_sponsorship"
   end
