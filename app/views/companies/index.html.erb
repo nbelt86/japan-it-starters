@@ -1,14 +1,14 @@
 <div class="flex flex-col gap-6 w-full">
   <h1 class="text-2xl font-bold text-white">Companies</h1>
 
-  <%= form_with url: companies_path, method: :get, class: "flex flex-col gap-3 bg-gray-800 border border-gray-700 rounded-lg p-4" do |f| %>
+  <%= form_with url: companies_path, method: :get, class: "flex flex-col gap-3 bg-zinc-900 border border-zinc-800 rounded-lg p-4" do |f| %>
     <div class="flex gap-3">
       <%= f.text_field :query, value: @query, placeholder: "Search by name, industry, or tech stack...",
-      class: "bg-gray-900 border border-gray-700 text-white rounded-md px-3 py-2 flex-1" %>
-      <%= f.submit "Search", class: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition cursor-pointer" %>
+      class: "bg-zinc-950 border border-zinc-800 text-white rounded-md px-3 py-2 flex-1" %>
+      <%= f.submit "Search", class: "bg-[#B5442E] hover:bg-[#9c3a26] text-white px-4 py-2 rounded-md font-medium transition cursor-pointer" %>
     </div>
 
-    <div class="flex flex-wrap gap-4 items-center text-sm text-gray-300">
+    <div class="flex flex-wrap gap-4 items-center text-sm text-zinc-300">
       <label class="flex items-center gap-2">
         <%= check_box_tag :hires_juniors, "1", @hires_juniors, class: "rounded" %> Hires juniors / no experience
       </label>
@@ -21,52 +21,52 @@
 
       <%= select_tag :japanese_level,
         options_for_select([["Any Japanese level", ""]] + Company.japanese_levels.keys.map { |k| [k.humanize, k] }, @japanese_level),
-        class: "bg-gray-900 border border-gray-700 text-white rounded-md px-2 py-1.5" %>
+        class: "bg-zinc-950 border border-zinc-800 text-white rounded-md px-2 py-1.5" %>
 
       <%= select_tag :remote_policy,
         options_for_select([["Any work style", ""]] + Company.remote_policies.keys.map { |k| [k.humanize, k] }, @remote_policy),
-        class: "bg-gray-900 border border-gray-700 text-white rounded-md px-2 py-1.5" %>
+        class: "bg-zinc-950 border border-zinc-800 text-white rounded-md px-2 py-1.5" %>
 
       <%= select_tag :city,
         options_for_select([["Any city", ""]] + @cities.map { |c| [c, c] }, @city),
-        class: "bg-gray-900 border border-gray-700 text-white rounded-md px-2 py-1.5" %>
+        class: "bg-zinc-950 border border-zinc-800 text-white rounded-md px-2 py-1.5" %>
 
-      <%= f.submit "Filter", class: "bg-gray-700 hover:bg-gray-600 text-white px-3 py-1.5 rounded-md text-sm transition cursor-pointer" %>
-      <%= link_to "Clear", companies_path, class: "text-gray-400 hover:text-white transition" %>
+      <%= f.submit "Filter", class: "bg-zinc-800 hover:bg-zinc-700 text-white px-3 py-1.5 rounded-md text-sm transition cursor-pointer" %>
+      <%= link_to "Clear", companies_path, class: "text-zinc-400 hover:text-white transition" %>
     </div>
   <% end %>
 
   <% if @companies.any? %>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <% @companies.each do |company| %>
-        <%= link_to company_path(company), class: "block bg-gray-800 border border-gray-700 rounded-lg p-4 hover:border-gray-600 hover:bg-gray-700 transition group" do %>
+        <%= link_to company_path(company), class: "block bg-zinc-900 border border-zinc-800 rounded-lg p-4 hover:border-zinc-700 hover:bg-zinc-800 transition group" do %>
           <div class="flex flex-col gap-2">
-            <span class="font-semibold text-gray-100 group-hover:text-blue-400 transition"><%= company.name %></span>
+            <span class="font-semibold text-zinc-100 group-hover:text-[#D97757] transition"><%= company.name %></span>
             <div class="flex flex-wrap gap-1.5 text-xs">
               <% if company.city.present? %>
-                <span class="bg-gray-900 text-gray-300 px-2 py-0.5 rounded-full"><%= company.city %></span>
+                <span class="bg-zinc-950 text-zinc-300 px-2 py-0.5 rounded-full"><%= company.city %></span>
               <% end %>
               <% if company.industry.present? %>
-                <span class="bg-gray-900 text-gray-300 px-2 py-0.5 rounded-full"><%= company.industry %></span>
+                <span class="bg-zinc-950 text-zinc-300 px-2 py-0.5 rounded-full"><%= company.industry %></span>
               <% end %>
               <% if company.hires_juniors? %>
-                <span class="bg-green-950 text-green-400 px-2 py-0.5 rounded-full">Hires juniors</span>
+                <span class="bg-[#2a3324] text-[#9cbf7a] px-2 py-0.5 rounded-full">Hires juniors</span>
               <% end %>
               <% if company.visa_sponsorship? %>
-                <span class="bg-blue-950 text-blue-400 px-2 py-0.5 rounded-full">Visa OK</span>
+                <span class="bg-amber-950 text-amber-400 px-2 py-0.5 rounded-full">Visa OK</span>
               <% end %>
             </div>
-            <p class="text-gray-400 text-sm line-clamp-2"><%= company.description %></p>
+            <p class="text-zinc-400 text-sm line-clamp-2"><%= company.description %></p>
             <% if company.last_verified_on.present? %>
-              <p class="text-gray-600 text-xs">Verified <%= company.last_verified_on.strftime("%b %Y") %></p>
+              <p class="text-zinc-600 text-xs">Verified <%= company.last_verified_on.strftime("%b %Y") %></p>
             <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
   <% else %>
-    <div class="flex flex-col items-center gap-3 text-center bg-gray-800 border border-dashed border-gray-700 rounded-lg py-12 px-4">
-      <p class="text-gray-400">
+    <div class="flex flex-col items-center gap-3 text-center bg-zinc-900 border border-dashed border-zinc-800 rounded-lg py-12 px-4">
+      <p class="text-zinc-400">
         <% if @query.present? %>
           No companies match "<%= @query %>".
         <% else %>
