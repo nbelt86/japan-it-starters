@@ -1,26 +1,26 @@
 <div class="flex flex-col gap-4 max-w-2xl w-full">
   <%= link_to "← Back to Companies", companies_path, class: "text-zinc-400 hover:text-zinc-200 text-sm w-fit transition" %>
 
-  <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6 flex flex-col gap-4">
-    <h1 class="text-2xl font-bold text-white"><%= @company.name %></h1>
+  <div class="bg-zinc-900 border-l-2 border-[#B5442E] p-6 flex flex-col gap-4">
+    <h1 class="font-display text-3xl text-white"><%= @company.name %></h1>
 
     <div class="flex flex-wrap gap-2">
       <% if @company.city.present? %>
-        <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-full"><%= @company.city %></span>
+        <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-sm"><%= @company.city %></span>
       <% end %>
       <% if @company.industry.present? %>
-        <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-full"><%= @company.industry %></span>
+        <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-sm"><%= @company.industry %></span>
       <% end %>
-      <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-full"><%= @company.remote_policy.humanize %></span>
-      <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-full">Japanese: <%= @company.japanese_level.humanize %></span>
+      <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-sm"><%= @company.remote_policy.humanize %></span>
+      <span class="bg-zinc-950 text-zinc-300 text-sm px-3 py-1 rounded-sm">Japanese: <%= @company.japanese_level.humanize %></span>
       <% if @company.hires_juniors? %>
-        <span class="bg-[#2a3324] text-[#9cbf7a] text-sm px-3 py-1 rounded-full">Hires juniors</span>
+        <span class="bg-[#2a3324] text-[#9cbf7a] text-sm px-3 py-1 rounded-sm">Hires juniors</span>
       <% end %>
       <% if @company.visa_sponsorship? %>
-        <span class="bg-amber-950 text-amber-400 text-sm px-3 py-1 rounded-full">Visa sponsorship</span>
+        <span class="bg-amber-950 text-amber-400 text-sm px-3 py-1 rounded-sm">Visa sponsorship</span>
       <% end %>
       <% if @company.english_ok? %>
-        <span class="bg-[#3d2420] text-[#e8a688] text-sm px-3 py-1 rounded-full">English OK</span>
+        <span class="bg-[#3d2420] text-[#e8a688] text-sm px-3 py-1 rounded-sm">English OK</span>
       <% end %>
     </div>
 
@@ -36,7 +36,7 @@
     <% end %>
 
     <% if @company.notes.present? %>
-      <div class="text-sm bg-zinc-950 border border-zinc-800 rounded-md p-3 text-zinc-400">
+      <div class="text-sm bg-zinc-950 border border-zinc-800 rounded-sm p-3 text-zinc-400">
         <span class="font-medium text-zinc-300">Notes:</span> <%= @company.notes %>
       </div>
     <% end %>
